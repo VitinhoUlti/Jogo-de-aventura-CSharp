@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jogo de aventura C#", "Jogo de aventura C#\Jogo de aventura C#.csproj", "{44BFAA93-99EF-443B-997D-C798A3082186}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jogo de aventura", "Jogo de aventura C#\Jogo de aventura.csproj", "{44BFAA93-99EF-443B-997D-C798A3082186}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

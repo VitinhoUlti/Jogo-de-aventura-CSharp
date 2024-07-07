@@ -12,9 +12,54 @@ namespace Jogo_de_aventura_C_.Classes
 {
     internal class Player : Objetos
     {
-        public Player(PictureBox suaPictureBox) : base(suaPictureBox)
+        public Player(PictureBox suaPictureBox, int casasQueAnda) : base(suaPictureBox, casasQueAnda)
         {
-            TemArma = true;
+            TemArma = false;
+        }
+
+        public void PegarItem(Armas arma)
+        {
+            arma.SuaPictureBox.Visible = false;
+            arma.FotoNoInventario.Visible = true;
+        }
+        public void VerificarSeArmaCausaDano(Armas arma)
+        {
+            if (arma.CausaDano)
+            {
+                TemArma = true;
+            }
+            else
+            {
+                TemArma = false;
+            }
+        }
+
+        public Point VoltarAoPontoOriginal()
+        {
+            Localização = new Point(485, 142);
+            return Localização;
+        }
+
+        public void UsarPoção(int VidasRecuperadas)
+        {
+            Vidas += VidasRecuperadas;
+        }
+
+        public override void TirarVida(Objetos inimigo)
+        {
+            if (inimigo.SuaPictureBox.Visible)
+            {
+                inimigo.Vidas -= DanoDaArma;
+            }
+
+            if (inimigo.Vidas < 1)
+            {
+                inimigo.SuaPictureBox.Visible = false;
+            }
+        }
+        public void MudarDanoDaArma(int dano)
+        {
+            DanoDaArma = dano;
         }
     }
 }

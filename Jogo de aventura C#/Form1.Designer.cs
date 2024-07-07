@@ -62,6 +62,9 @@
             this.InPotionBlue = new System.Windows.Forms.PictureBox();
             this.Player = new System.Windows.Forms.PictureBox();
             this.Background = new System.Windows.Forms.Panel();
+            this.TelaPerder = new System.Windows.Forms.PictureBox();
+            this.TelaVencer = new System.Windows.Forms.PictureBox();
+            this.buttonReiniciar = new System.Windows.Forms.Button();
             this.MoveBox.SuspendLayout();
             this.AttackBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bat)).BeginInit();
@@ -79,6 +82,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.InPotionBlue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             this.Background.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TelaPerder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TelaVencer)).BeginInit();
             this.SuspendLayout();
             // 
             // MoveBox
@@ -102,7 +107,7 @@
             this.MDown.TabIndex = 3;
             this.MDown.Text = "Down";
             this.MDown.UseVisualStyleBackColor = true;
-            this.MDown.Click += new System.EventHandler(this.MDown_Click);
+            this.MDown.Click += new System.EventHandler(this.MoveDown_Click);
             // 
             // MRight
             // 
@@ -112,7 +117,7 @@
             this.MRight.TabIndex = 2;
             this.MRight.Text = "Right";
             this.MRight.UseVisualStyleBackColor = true;
-            this.MRight.Click += new System.EventHandler(this.MRight_Click);
+            this.MRight.Click += new System.EventHandler(this.MoveRight_Click);
             // 
             // MLeft
             // 
@@ -122,7 +127,7 @@
             this.MLeft.TabIndex = 1;
             this.MLeft.Text = "Left";
             this.MLeft.UseVisualStyleBackColor = true;
-            this.MLeft.Click += new System.EventHandler(this.MLeft_Click);
+            this.MLeft.Click += new System.EventHandler(this.MoveLeft_Click);
             // 
             // MUp
             // 
@@ -132,7 +137,7 @@
             this.MUp.TabIndex = 0;
             this.MUp.Text = "Up";
             this.MUp.UseVisualStyleBackColor = true;
-            this.MUp.Click += new System.EventHandler(this.MUp_Click);
+            this.MUp.Click += new System.EventHandler(this.MoveUp_Click);
             // 
             // AttackBox
             // 
@@ -155,7 +160,7 @@
             this.ADown.TabIndex = 4;
             this.ADown.Text = "Down";
             this.ADown.UseVisualStyleBackColor = true;
-            this.ADown.Click += new System.EventHandler(this.ADown_Click);
+            this.ADown.Click += new System.EventHandler(this.AttackDown_Click);
             // 
             // ARight
             // 
@@ -165,7 +170,7 @@
             this.ARight.TabIndex = 3;
             this.ARight.Text = "Right";
             this.ARight.UseVisualStyleBackColor = true;
-            this.ARight.Click += new System.EventHandler(this.ARight_Click);
+            this.ARight.Click += new System.EventHandler(this.AttackRight_Click);
             // 
             // ALeft
             // 
@@ -175,7 +180,7 @@
             this.ALeft.TabIndex = 2;
             this.ALeft.Text = "Left";
             this.ALeft.UseVisualStyleBackColor = true;
-            this.ALeft.Click += new System.EventHandler(this.ALeft_Click);
+            this.ALeft.Click += new System.EventHandler(this.AttackLeft_Click);
             // 
             // AUp
             // 
@@ -185,7 +190,7 @@
             this.AUp.TabIndex = 1;
             this.AUp.Text = "Up";
             this.AUp.UseVisualStyleBackColor = true;
-            this.AUp.Click += new System.EventHandler(this.AUp_Click);
+            this.AUp.Click += new System.EventHandler(this.AttackUp_Click);
             // 
             // TextPlayerLife
             // 
@@ -264,7 +269,7 @@
             this.Bat.BackColor = System.Drawing.Color.Transparent;
             this.Bat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Bat.Image = ((System.Drawing.Image)(resources.GetObject("Bat.Image")));
-            this.Bat.Location = new System.Drawing.Point(125, 102);
+            this.Bat.Location = new System.Drawing.Point(325, 102);
             this.Bat.Name = "Bat";
             this.Bat.Size = new System.Drawing.Size(31, 31);
             this.Bat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -303,7 +308,7 @@
             this.Sworld.BackColor = System.Drawing.Color.Transparent;
             this.Sworld.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Sworld.Image = ((System.Drawing.Image)(resources.GetObject("Sworld.Image")));
-            this.Sworld.Location = new System.Drawing.Point(242, 62);
+            this.Sworld.Location = new System.Drawing.Point(245, 62);
             this.Sworld.Name = "Sworld";
             this.Sworld.Size = new System.Drawing.Size(31, 31);
             this.Sworld.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -316,7 +321,7 @@
             this.PotionRed.BackColor = System.Drawing.Color.Transparent;
             this.PotionRed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.PotionRed.Image = ((System.Drawing.Image)(resources.GetObject("PotionRed.Image")));
-            this.PotionRed.Location = new System.Drawing.Point(279, 62);
+            this.PotionRed.Location = new System.Drawing.Point(285, 62);
             this.PotionRed.Name = "PotionRed";
             this.PotionRed.Size = new System.Drawing.Size(31, 31);
             this.PotionRed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -329,7 +334,7 @@
             this.Espinhos.BackColor = System.Drawing.Color.Transparent;
             this.Espinhos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Espinhos.Image = ((System.Drawing.Image)(resources.GetObject("Espinhos.Image")));
-            this.Espinhos.Location = new System.Drawing.Point(316, 62);
+            this.Espinhos.Location = new System.Drawing.Point(325, 62);
             this.Espinhos.Name = "Espinhos";
             this.Espinhos.Size = new System.Drawing.Size(31, 31);
             this.Espinhos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -342,7 +347,7 @@
             this.Bow.BackColor = System.Drawing.Color.Transparent;
             this.Bow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Bow.Image = ((System.Drawing.Image)(resources.GetObject("Bow.Image")));
-            this.Bow.Location = new System.Drawing.Point(353, 62);
+            this.Bow.Location = new System.Drawing.Point(365, 62);
             this.Bow.Name = "Bow";
             this.Bow.Size = new System.Drawing.Size(31, 31);
             this.Bow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -355,7 +360,7 @@
             this.BluePotion.BackColor = System.Drawing.Color.Transparent;
             this.BluePotion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BluePotion.Image = ((System.Drawing.Image)(resources.GetObject("BluePotion.Image")));
-            this.BluePotion.Location = new System.Drawing.Point(390, 62);
+            this.BluePotion.Location = new System.Drawing.Point(405, 62);
             this.BluePotion.Name = "BluePotion";
             this.BluePotion.Size = new System.Drawing.Size(31, 31);
             this.BluePotion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -375,6 +380,7 @@
             this.InSworld.TabIndex = 23;
             this.InSworld.TabStop = false;
             this.InSworld.Visible = false;
+            this.InSworld.Click += new System.EventHandler(this.InSworld_Click);
             // 
             // InPotionRed
             // 
@@ -388,6 +394,7 @@
             this.InPotionRed.TabIndex = 24;
             this.InPotionRed.TabStop = false;
             this.InPotionRed.Visible = false;
+            this.InPotionRed.Click += new System.EventHandler(this.InPotionRed_Click);
             // 
             // InEspinhos
             // 
@@ -401,6 +408,7 @@
             this.InEspinhos.TabIndex = 25;
             this.InEspinhos.TabStop = false;
             this.InEspinhos.Visible = false;
+            this.InEspinhos.Click += new System.EventHandler(this.InEspinhos_Click);
             // 
             // InBow
             // 
@@ -414,6 +422,7 @@
             this.InBow.TabIndex = 26;
             this.InBow.TabStop = false;
             this.InBow.Visible = false;
+            this.InBow.Click += new System.EventHandler(this.InBow_Click);
             // 
             // InPotionBlue
             // 
@@ -427,13 +436,14 @@
             this.InPotionBlue.TabIndex = 27;
             this.InPotionBlue.TabStop = false;
             this.InPotionBlue.Visible = false;
+            this.InPotionBlue.Click += new System.EventHandler(this.InPotionBlue_Click);
             // 
             // Player
             // 
             this.Player.BackColor = System.Drawing.Color.Transparent;
             this.Player.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Player.Image = ((System.Drawing.Image)(resources.GetObject("Player.Image")));
-            this.Player.Location = new System.Drawing.Point(88, 62);
+            this.Player.Location = new System.Drawing.Point(365, 102);
             this.Player.Name = "Player";
             this.Player.Size = new System.Drawing.Size(31, 31);
             this.Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -444,6 +454,8 @@
             // Background
             // 
             this.Background.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Background.BackgroundImage")));
+            this.Background.Controls.Add(this.TelaPerder);
+            this.Background.Controls.Add(this.TelaVencer);
             this.Background.Controls.Add(this.InPotionBlue);
             this.Background.Controls.Add(this.Player);
             this.Background.Controls.Add(this.InBow);
@@ -463,11 +475,44 @@
             this.Background.Size = new System.Drawing.Size(600, 400);
             this.Background.TabIndex = 28;
             // 
+            // TelaPerder
+            // 
+            this.TelaPerder.Image = ((System.Drawing.Image)(resources.GetObject("TelaPerder.Image")));
+            this.TelaPerder.Location = new System.Drawing.Point(0, 0);
+            this.TelaPerder.Name = "TelaPerder";
+            this.TelaPerder.Size = new System.Drawing.Size(600, 302);
+            this.TelaPerder.TabIndex = 29;
+            this.TelaPerder.TabStop = false;
+            this.TelaPerder.Visible = false;
+            // 
+            // TelaVencer
+            // 
+            this.TelaVencer.Image = ((System.Drawing.Image)(resources.GetObject("TelaVencer.Image")));
+            this.TelaVencer.Location = new System.Drawing.Point(0, 0);
+            this.TelaVencer.Name = "TelaVencer";
+            this.TelaVencer.Size = new System.Drawing.Size(603, 302);
+            this.TelaVencer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.TelaVencer.TabIndex = 28;
+            this.TelaVencer.TabStop = false;
+            this.TelaVencer.Visible = false;
+            // 
+            // buttonReiniciar
+            // 
+            this.buttonReiniciar.Location = new System.Drawing.Point(743, 292);
+            this.buttonReiniciar.Name = "buttonReiniciar";
+            this.buttonReiniciar.Size = new System.Drawing.Size(91, 39);
+            this.buttonReiniciar.TabIndex = 30;
+            this.buttonReiniciar.Text = "Reiniciar";
+            this.buttonReiniciar.UseVisualStyleBackColor = true;
+            this.buttonReiniciar.Visible = false;
+            this.buttonReiniciar.Click += new System.EventHandler(this.buttonReiniciar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 407);
+            this.Controls.Add(this.buttonReiniciar);
             this.Controls.Add(this.GhoulLife);
             this.Controls.Add(this.GhostLife);
             this.Controls.Add(this.BatLife);
@@ -499,6 +544,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.InPotionBlue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
             this.Background.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TelaPerder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TelaVencer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,6 +585,9 @@
         private System.Windows.Forms.PictureBox InPotionBlue;
         private System.Windows.Forms.PictureBox Player;
         private System.Windows.Forms.Panel Background;
+        private System.Windows.Forms.Button buttonReiniciar;
+        private System.Windows.Forms.PictureBox TelaPerder;
+        private System.Windows.Forms.PictureBox TelaVencer;
     }
 }
 

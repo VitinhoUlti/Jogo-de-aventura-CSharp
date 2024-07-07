@@ -10,7 +10,7 @@ namespace Jogo_de_aventura_C_.Classes
 {
     internal class Inimigos : Objetos
     {
-        public Inimigos(PictureBox suaPictureBox) : base(suaPictureBox)
+        public Inimigos(PictureBox suaPictureBox, int casasQueAnda) : base(suaPictureBox, casasQueAnda)
         {
         }
     }

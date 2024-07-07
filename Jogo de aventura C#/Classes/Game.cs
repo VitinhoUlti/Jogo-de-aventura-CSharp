@@ -21,23 +21,26 @@ namespace Jogo_de_aventura_C_.Classes
         public void PassarLevel(List<PictureBox> inimigosQueApareceram)
         {
             level++;
-            ApagarTodosOsMonstros();
-            foreach (var item in inimigosQueApareceram)
-            {
-                item.Visible = true;
-            }
-        }
-        private void ApagarTodosOsMonstros()
-        {
+
             foreach (var item in TodosOsInimigos)
             {
                 item.Visible = false;
+            }
+
+            foreach (var item in inimigosQueApareceram)
+            {
+                item.Visible = true;
             }
         }
 
         public int Level()
         {
             return level;
+        }
+
+        public void VoltarLevelAZero()
+        {
+            level = 0;
         }
     }
 }
